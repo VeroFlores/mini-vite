@@ -40,10 +40,10 @@ const pwaOptions: Partial<VitePWAOptions> = {
 }
 
 const replaceOptions = { __DATE__: new Date().toISOString() }
-const claims = 'true' === 'true'
-const reload = 'true' === 'true'
+const claims = process.env.CLAIMS === 'true'
+const reload = process.env.RELOAD_SW === 'true'
 
-if ('true') {
+if (process.env.SW === 'true') {
   pwaOptions.srcDir = 'src'
   pwaOptions.filename = claims ? 'claims-sw.ts' : 'prompt-sw.ts'
   pwaOptions.strategies = 'injectManifest'
