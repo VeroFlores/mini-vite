@@ -14,17 +14,17 @@ const pwaOptions: Partial<VitePWAOptions> = {
     theme_color: '#ffffff',
     icons: [
       {
-        src: 'pwa-192x192.png', // <== don't add slash, for testing
+        src: 'favicons/favicon_192x192.png', // <== don't add slash, for testing
         sizes: '192x192',
         type: 'image/png',
       },
       {
-        src: '/pwa-512x512.png', // <== don't remove slash, for testing
+        src: 'favicons/favicon_512x512.png', // <== don't remove slash, for testing
         sizes: '512x512',
         type: 'image/png',
       },
       {
-        src: 'pwa-512x512.png', // <== don't add slash, for testing
+        src: 'favicons/favincon_512x512.png', // <== don't add slash, for testing
         sizes: '512x512',
         type: 'image/png',
         purpose: 'any maskable',
@@ -47,8 +47,8 @@ if ('true') {
   pwaOptions.srcDir = 'src'
   pwaOptions.filename = claims ? 'claims-sw.ts' : 'prompt-sw.ts'
   pwaOptions.strategies = 'injectManifest'
-  ;(pwaOptions.manifest as Partial<ManifestOptions>).name = 'PWA Inject Manifest'
-  ;(pwaOptions.manifest as Partial<ManifestOptions>).short_name = 'PWA Inject'
+  ;(pwaOptions.manifest as Partial<ManifestOptions>).name = 'Pacifico injected'
+  ;(pwaOptions.manifest as Partial<ManifestOptions>).short_name = 'Pacifico PWA'
 }
 
 if (claims)
